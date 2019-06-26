@@ -1,0 +1,11 @@
+no_log: true
+ovirt_auth:
+  url: https://ovirt.example.com/ovirt-engine/api
+  username: admin@internal
+  password: Aa123456
+  ca_file: ca.pem
+
+# Revoke the SSO token returned from previous task
+ovirt_auth:
+  state: absent
+  ovirt_auth: "{{ ovirt_auth }}"
